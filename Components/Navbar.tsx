@@ -2,35 +2,42 @@
 
 import { ArrowUpRightIcon } from "@heroicons/react/20/solid";
 import {
-  AtSymbolIcon,
+  Bars3Icon,
   EnvelopeIcon,
   HeartIcon,
   HomeIcon,
   PencilIcon,
+  XMarkIcon,
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import { CiLinkedin, CiInstagram } from "react-icons/ci";
+
+
 
 export default function SideNav() {
   const [current, setCurrent] = useState("Home");
+  const [toggle, setToggle] = useState(true);
 
   const handleCurrent = (currentP: string) => {
     setCurrent(currentP);
   };
 
-  useEffect(() => {
-    console.log(current);
-  }, [current]); // This effect will run whenever 'current' changes
+  // useEffect(() => {
+  //   console.log(current);
+  // }, [current]); // This effect will run whenever 'current' changes
+
+  const handleToggle = () => {
+    setToggle(!toggle);
+  };
 
   return (
-    <div className="flex md:h-screen md:flex-col md:py-8 my-auto justify-between p-4 text-lg">
-      <div className="flex flex-col gap-2 ">
+    <div className="fixed md:w-[20%] w-full flex md:h-screen md:flex-col md:py-8  md:my-auto mx-auto justify-between md:p-4 p-8 lg:text-lg bg-transparent md:bg-black">
+      <div className="flex-col gap-2 md:flex hidden">
         <Link
           href="/"
           className={clsx(
-            `flex gap-2 border-2  p-2 box-border border-transparent items-center`,
+            `p-2 flex gap-2 border-2 box-border border-transparent items-center`,
             {
               "border-2 box-border rounded-md border-white": current === "Home",
             }
@@ -40,8 +47,9 @@ export default function SideNav() {
           }}
         >
           <HomeIcon className="w-5" />
-          Homepage
+          Home
         </Link>
+
         <Link
           href="/"
           className={clsx(
@@ -58,6 +66,7 @@ export default function SideNav() {
           <HeartIcon className="w-5" />
           Projects
         </Link>
+
         <Link
           href="/"
           className={clsx(
@@ -88,37 +97,174 @@ export default function SideNav() {
           }}
         >
           <EnvelopeIcon className="w-5" />
-          Contact Me
+          Contact
         </Link>
       </div>
 
-      <div className="flex flex-col gap-4 text-gray-400 text-md">
+      <div className="hidden md:flex flex-col gap-4 text-gray-400 text-md">
         <Link
           href="https://www.linkedin.com/in/ananya-singh-95bb83242/"
           target="_blank"
-          className=" pt-3 flex gap-2 items-center"
+          className=" pt-3 flex gap-2 items-center  hover:gap-3 transition-all"
         >
-          
           LinkedIn
           <ArrowUpRightIcon className="w-4" />
         </Link>
+
+        <Link
+          href="https://www.instagram.com/hdeius/?igsh=YmFqeHp1dDA3bXFo"
+          target="_blank"
+          className="border-t-2 border-gray-800 pt-3 flex gap-2 items-center hover:gap-3 transition-all"
+        >
+          Instagram
+          <ArrowUpRightIcon className="w-4 group " />
+        </Link>
+
         <Link
           href="/"
-          className="border-t-2 border-gray-800 pt-3 flex gap-2 items-center"
+          className="border-t-2 border-gray-800  pt-3 flex gap-2 items-center  hover:gap-3 transition-all"
         >
-          
-          Instagram
+          Email
           <ArrowUpRightIcon className="w-4" />
         </Link>
-        <Link
-          href="/"
-          className="border-t-2 border-gray-800 pt-3 flex gap-2 items-center"
-        >
-        
-          Email
-          <ArrowUpRightIcon className='w-4'/>
+      </div>
 
-        </Link>
+      <div className="md:hidden flex">
+        <HomeIcon className="w-8" />
+      </div>
+
+      <div className="md:hidden flex">
+        {toggle ? (
+          <Bars3Icon className="w-8" onClick={() => handleToggle()} />
+        ) : (
+          <XMarkIcon className="w-8" onClick={() => handleToggle()} />
+        )}
+      </div>
+
+      <div
+        className={`fixed z-50 h-screen  md:hidden top-0 transition-all duration-300 ease-in-out  ${
+          toggle ? "-right-full" : "right-0"
+        }  w-[60vw]  bg-black flex flex-col justify-between`}
+      >
+        <div className=" flex flex-col gap-4 p-4" >
+          <div className="flex-col gap-2 ">
+
+            <div className="flex justify-end mr-4 ">
+          <XMarkIcon className="mt-4 w-8 mb-4" onClick={() => handleToggle()} />
+            </div>
+            <Link
+              href="/"
+              className={clsx(
+                `${
+                  toggle ? "opacity-0 delay-200" : "opacity-100 delay-200"
+                } transition-all  p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                {
+                  "border-2 box-border rounded-md border-white":
+                    current === "Home",
+                }
+              )}
+              onClick={() => {
+                handleCurrent("Home");
+              }}
+            >
+              <HomeIcon className="w-5" />
+              Home
+            </Link>
+
+            <Link
+              href="/"
+              className={clsx(
+                `${
+                  toggle ? "opacity-0" : "opacity-100"
+                } transition-all delay-[250ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                {
+                  "border-2 box-border rounded-md border-white":
+                    current === "Projects",
+                }
+              )}
+              onClick={() => {
+                handleCurrent("Projects");
+              }}
+            >
+              <HeartIcon className="w-5" />
+              Projects
+            </Link>
+
+            <Link
+              href="/"
+              className={clsx(
+                `${
+                  toggle ? "opacity-0" : "opacity-100"
+                } transition-all delay-[300ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                {
+                  " border-2 box-border rounded-md border-white":
+                    current === "Resume",
+                }
+              )}
+              onClick={() => {
+                handleCurrent("Resume");
+              }}
+            >
+              <PencilIcon className="w-5" />
+              Resume
+            </Link>
+            <Link
+              href="/"
+              className={clsx(
+                `${
+                  toggle ? "opacity-0" : "opacity-100"
+                } transition-all delay-[350ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                {
+                  "border-2 box-border rounded-md border-white":
+                    current === "Contact",
+                }
+              )}
+              onClick={() => {
+                handleCurrent("Contact");
+              }}
+            >
+              <EnvelopeIcon className="w-5" />
+              Contact
+            </Link>
+          </div>
+          </div>
+
+          <div className="flex flex-col gap-4 p-4">
+            <Link
+              href="https://www.linkedin.com/in/ananya-singh-95bb83242/"
+              target="_blank"
+              className={`${
+                toggle ? "opacity-0" : "opacity-100"
+              } transition-all delay-[400ms] pt-3 flex gap-2 items-center  hover:gap-3`}
+            >
+              LinkedIn
+              <ArrowUpRightIcon className="w-4" />
+            </Link>
+
+            <Link
+              href="https://www.instagram.com/hdeius/?igsh=YmFqeHp1dDA3bXFo"
+              target="_blank"
+              className={`${
+                toggle ? "opacity-0" : "opacity-100"
+              } transition-all delay-[450ms] border-t-2 border-gray-800  pt-3 flex gap-2 items-center  hover:gap-3`}
+            >
+              Instagram
+              <ArrowUpRightIcon className="w-4 group " />
+            </Link>
+
+            <Link
+              href="/"
+              className={`${
+                toggle ? "opacity-0" : "opacity-100"
+              } transition-all  delay-[500ms] border-t-2 border-gray-800 mb-16 pt-3 flex gap-2 items-center  hover:gap-3`}
+            >
+              Email
+              <ArrowUpRightIcon className="w-4" />
+            </Link>
+
+            
+          </div>
+        
       </div>
     </div>
   );

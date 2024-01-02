@@ -11,6 +11,8 @@
   "dependencies": {
     "@heroicons/react": "^2.0.18",
     "clsx": "^2.1.0",
+    "framer-motion": "^10.16.16",
+    "gsap": "^3.12.4",
     "heroicons": "^2.1.1",
     "next": "14.0.4",
     "react": "^18",
