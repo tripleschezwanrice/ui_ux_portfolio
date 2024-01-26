@@ -11,90 +11,74 @@ import {
 } from "@heroicons/react/24/outline";
 import clsx from "clsx";
 import Link from "next/link";
+import { useParams, usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
+
 
 
 
 export default function SideNav() {
   const [current, setCurrent] = useState("Home");
   const [toggle, setToggle] = useState(true);
+  const pathname = usePathname();
 
-  const handleCurrent = (currentP: string) => {
-    setCurrent(currentP);
-  };
-
-  // useEffect(() => {
-  //   console.log(current);
-  // }, [current]); // This effect will run whenever 'current' changes
 
   const handleToggle = () => {
-    setToggle(!toggle);
+    setToggle(!toggle); 
   };
 
   return (
-    <div className="fixed md:w-[20%] w-full flex md:h-screen md:flex-col md:py-8  md:my-auto mx-auto justify-between md:p-4 p-8 lg:text-lg bg-transparent md:bg-black">
+    <div className="fixed z-50 md:w-[20%] w-full flex md:h-screen md:flex-col md:py-8  md:my-auto mx-auto justify-between md:p-4 p-8 lg:text-lg bg-transparent md:bg-black">
       <div className="flex-col gap-2 md:flex hidden">
         <Link
           href="/"
           className={clsx(
             `p-2 flex gap-2 border-2 box-border border-transparent items-center`,
             {
-              "border-2 box-border rounded-md border-white": current === "Home",
+              "border-2 box-border rounded-md border-white": pathname === "/",
             }
           )}
-          onClick={() => {
-            handleCurrent("Home");
-          }}
         >
           <HomeIcon className="w-5" />
           Home
         </Link>
 
         <Link
-          href="/"
+          href="/Projects"
           className={clsx(
             `p-2 flex gap-2 border-2 box-border border-transparent items-center`,
             {
               "border-2 box-border rounded-md border-white":
-                current === "Projects",
+                pathname=== "/Projects",
             }
           )}
-          onClick={() => {
-            handleCurrent("Projects");
-          }}
         >
           <HeartIcon className="w-5" />
           Projects
         </Link>
 
         <Link
-          href="/"
+          href="/Resume"
           className={clsx(
             `p-2 flex gap-2 border-2 box-border border-transparent items-center`,
             {
               " border-2 box-border rounded-md border-white":
-                current === "Resume",
+                pathname === "/Resume",
             }
           )}
-          onClick={() => {
-            handleCurrent("Resume");
-          }}
         >
           <PencilIcon className="w-5" />
           Resume
         </Link>
         <Link
-          href="/"
+          href="/Contact"
           className={clsx(
             `p-2 flex gap-2 border-2 box-border border-transparent items-center`,
             {
               "border-2 box-border rounded-md border-white":
-                current === "Contact",
+                pathname === "/Contact",
             }
           )}
-          onClick={() => {
-            handleCurrent("Contact");
-          }}
         >
           <EnvelopeIcon className="w-5" />
           Contact
@@ -130,7 +114,7 @@ export default function SideNav() {
       </div>
 
       <div className="md:hidden flex">
-        <HomeIcon className="w-8" />
+        <Link href="/"><HomeIcon className="w-8" /></Link>
       </div>
 
       <div className="md:hidden flex">
@@ -156,15 +140,15 @@ export default function SideNav() {
               href="/"
               className={clsx(
                 `${
-                  toggle ? "opacity-0 delay-200" : "opacity-100 delay-200"
-                } transition-all  p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                  toggle ? "opacity-0" : "opacity-100"
+                } transition-all  p-2 flex gap-2 border-2 box-border delay-[250ms] border-transparent items-center`,
                 {
                   "border-2 box-border rounded-md border-white":
-                    current === "Home",
+                    pathname === "/",
                 }
               )}
               onClick={() => {
-                handleCurrent("Home");
+                handleToggle();
               }}
             >
               <HomeIcon className="w-5" />
@@ -172,55 +156,53 @@ export default function SideNav() {
             </Link>
 
             <Link
-              href="/"
+              href="/Projects"
               className={clsx(
                 `${
                   toggle ? "opacity-0" : "opacity-100"
                 } transition-all delay-[250ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
                 {
                   "border-2 box-border rounded-md border-white":
-                    current === "Projects",
+                    pathname === "/Projects",
                 }
               )}
-              onClick={() => {
-                handleCurrent("Projects");
-              }}
+             onClick={()=>{handleToggle()}}
             >
               <HeartIcon className="w-5" />
               Projects
             </Link>
 
             <Link
-              href="/"
+              href="/Resume"
               className={clsx(
                 `${
                   toggle ? "opacity-0" : "opacity-100"
-                } transition-all delay-[300ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                } transition-all delay-[250ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
                 {
                   " border-2 box-border rounded-md border-white":
-                    current === "Resume",
+                    pathname === "/Resume",
                 }
               )}
               onClick={() => {
-                handleCurrent("Resume");
+                handleToggle();
               }}
             >
               <PencilIcon className="w-5" />
               Resume
             </Link>
             <Link
-              href="/"
+              href="/Contact"
               className={clsx(
                 `${
                   toggle ? "opacity-0" : "opacity-100"
-                } transition-all delay-[350ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
+                } transition-all delay-[250ms] p-2 flex gap-2 border-2 box-border border-transparent items-center`,
                 {
                   "border-2 box-border rounded-md border-white":
-                    current === "Contact",
+                    pathname === "/Contact",
                 }
-              )}
-              onClick={() => {
-                handleCurrent("Contact");
+                )}
+                onClick={() => {
+                handleToggle();
               }}
             >
               <EnvelopeIcon className="w-5" />
@@ -229,7 +211,7 @@ export default function SideNav() {
           </div>
           </div>
 
-          <div className="flex flex-col gap-4 p-4">
+          <div className="flex flex-col gap-4 p-4 text-gray-500">
             <Link
               href="https://www.linkedin.com/in/ananya-singh-95bb83242/"
               target="_blank"
@@ -246,7 +228,7 @@ export default function SideNav() {
               target="_blank"
               className={`${
                 toggle ? "opacity-0" : "opacity-100"
-              } transition-all delay-[450ms] border-t-2 border-gray-800  pt-3 flex gap-2 items-center  hover:gap-3`}
+              } transition-all delay-[400ms] border-t-2 border-gray-800  pt-3 flex gap-2 items-center  hover:gap-3`}
             >
               Instagram
               <ArrowUpRightIcon className="w-4 group " />
@@ -256,7 +238,7 @@ export default function SideNav() {
               href="/"
               className={`${
                 toggle ? "opacity-0" : "opacity-100"
-              } transition-all  delay-[500ms] border-t-2 border-gray-800 mb-16 pt-3 flex gap-2 items-center  hover:gap-3`}
+              } transition-all  delay-[400ms] border-t-2 border-gray-800 mb-16 pt-3 flex gap-2 items-center  hover:gap-3`}
             >
               Email
               <ArrowUpRightIcon className="w-4" />

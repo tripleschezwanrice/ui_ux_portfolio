@@ -15,9 +15,6 @@ export default function Home() {
   return (
    <>
     <Hero/>  
-    <Projects/>
-    <Resume />
-    <LetsTalk />
    </>
 
   )
