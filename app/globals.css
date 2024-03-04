@@ -10,4 +10,6 @@ body {
     font-family: 'Syne', sans-serif;
 }
 
-
+.list-decimal{
+  list-style-type: decimal;
+}
