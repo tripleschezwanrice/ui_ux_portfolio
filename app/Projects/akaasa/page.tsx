@@ -139,7 +139,7 @@ The key question being How much do you consider [card] in running the business?â
             2. Users haven't actively had made efforts to expand their businessess
          </p>
          <p>
-           3. Users do not have a PAN card, and don t involve taxes due to their smaller scale of businesÂ’
+           3. Users do not have a PAN card, and don t involve taxes due to their smaller scale of business. 
          </p>
          <p>
             4.  Users don t have a proper way of deciding on the pricing of their products.

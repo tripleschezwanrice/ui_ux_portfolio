@@ -1,3 +1,13 @@
 {
-  "extends": "next/core-web-vitals"
+  "rules": {
+    "no-useless-imports": "off",
+    // Add the following rule to disable parsing errors for 'import'
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "ImportDeclaration",
+        "message": "ES6 import syntax is not allowed."
+      }
+    ]
+  }
 }
