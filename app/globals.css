@@ -13,3 +13,19 @@ body {
 .list-decimal{
   list-style-type: decimal;
 }
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  height: 1000px; /* Adjust height based on your content */
+}
+
+video {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+

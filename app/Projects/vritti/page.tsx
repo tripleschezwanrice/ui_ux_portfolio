@@ -7,19 +7,22 @@ const page = () => {
 
   return (
     <div className={`w-full bg-white font-normal text-black ${poppins.className}`}>
-      <div className="h-screen bg-pink-300">bg</div>
-      <div className="p-16">
+      <div className=" md:h-screen  overflow-hidden">
+      <Image src='/Vritti_Assets/v1.png' height={2024} width={2024} alt=""/>
+
+      </div>
+      <div className="md:p-12 p-6">
 
       
       <div>
         <p className="text-xl">Ananya Singh</p>
         <p className="text-6xl font-bold my-4">Vritti</p>
         <p>
-          Project overview: A web platform to help women from rural communities
+          Project overview: A web platform to helpn women from rural communities
           in career counselling and advancement
         </p>
       </div>
-      <div className="grid grid-cols-3 my-16 w-full">
+      <div className="grid grid-cols-3 my-16 w-full items-baseline">
         <div>
           <p className="font-bold text-gray-500">ROLE</p>
           <p>Solo student project</p>
@@ -34,6 +37,7 @@ const page = () => {
           <p className="font-bold text-gray-500">DURATION</p>
           <p>15 October - 27 November 2023</p>
         </div>
+
       </div>
       <div className="grid grid-cols-10 items-center">
         <div className="col-span-6">
@@ -80,13 +84,13 @@ const page = () => {
 
       <div className="mt-36">
         <p className="text-4xl font-bold mb-12">Overview</p>
-        <div className="flex mx-auto justify-center gap-24 text-2xl font-semibold" >
-          <p>Research</p>
-          <p>Empathise</p>
-          <p>Ideate</p>
-          <p>Design</p>
-          <p>Reflect</p>
-        </div>
+        <Image
+          src="/Vritti_Assets/Process Timeline.png"
+          height={2048}
+          width={2048}
+          alt=""
+          className="col-span-4 w-full md:p-12"
+        />
       </div>
 
 
@@ -118,20 +122,20 @@ const page = () => {
           groundwork for crafting a responsive and tailored counselling website.
         </p>
       </div>
-      <div className="flex">
+      <div className="md:flex">
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
+          src="/Vritti_Assets/v2.png"
+          height={2048}
+          width={2048}
           alt=""
-          className="col-span-4 w-[50%] p-12"
+          className="col-span-4 md:w-[45%] "
         />
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
+          src="/Vritti_Assets/v3.png"
+          height={2048}
+          width={2048}
           alt=""
-          className="col-span-4 w-[40%] p-12"
+          className="col-span-4 md:w-[55%]"
         />
       </div>
       <div>
@@ -218,20 +222,20 @@ const page = () => {
           by regarding your study, users’ priorities, Users’ pain points
         </p>
 
-        <div className="flex">
+        <div className="md:flex">
           <Image
-            src="/hero_image.png"
-            height={720}
-            width={720}
+            src="/Vritti_Assets/v4.png"
+            height={2048}
+            width={2048}
             alt=""
-            className="col-span-4 w-[40%] p-12"
+            className="col-span-4 md:w-[50%] "
           />
           <Image
-            src="/hero_image.png"
-            height={720}
-            width={720}
+            src="/Vritti_Assets/v5.png"
+            height={2048}
+            width={2048}
             alt=""
-            className="col-span-4 w-[40%] p-12"
+            className="col-span-4 md:w-[50%] "
           />
         </div>
       </div>
@@ -267,7 +271,7 @@ const page = () => {
           </li>
         </ul>
       </div>
-      <div className="mt-36     ">
+      <div className="mt-36 ">
         <p className="text-4xl font-bold">Solution</p>
         <p className="my-6">
           the solution is to design a career counselling website tailored to
@@ -292,11 +296,11 @@ const page = () => {
         </p>
 
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
+            src="/Vritti_Assets/v6.png"
+            height={2048}
+          width={2048}
           alt=""
-          className="col-span-4 w-[40%] p-12"
+          className="col-span-4 w-full  mt-12 lg:px-44 md:px-30 px-12"
         />
       </div>
       <div className="mt-36">
@@ -307,11 +311,11 @@ const page = () => {
           through questions, results, and resources
         </p>
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
+            src="/Vritti_Assets/vvv1.png"
+            height={4096}
+          width={4096}
           alt=""
-          className="col-span-4 w-[40%] p-12"
+          className="col-span-4 w-full md:p-12 mt-12"
         />
       </div>
       <div className="mt-36">
@@ -319,23 +323,23 @@ const page = () => {
         <p>Crafting a user journey that seamlessly guides individuals through a personalized career quiz, understanding their unique
 aspirations and leading them to tailored results for their professional path</p>
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
-          alt=""
-          className="col-span-4 w-[40%] p-12"
+             src="/Vritti_Assets/vvv2.png"
+             height={4096}
+           width={4096}
+           alt=""
+           className="col-span-4 w-full md:p-12 mt-12"
         />
       </div>
       <div className="mt-36">
-        <p className="text-4xl font-bold mb-6">User FLow</p>
+        <p className="text-4xl font-bold mb-6">User Flow</p>
         <p>Optimizing the user flow of the personalised career quiz, providing a clear and gradual progression from question to question,
 fostering a smooth and insightful journey</p>
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
-          alt=""
-          className="col-span-4 w-[40%] p-12"
+              src="/Vritti_Assets/vvv3.png"
+              height={4096}
+            width={4096}
+            alt=""
+            className="col-span-4 w-full mt-12 mdp-12"
         />
       </div>
 
@@ -343,13 +347,23 @@ fostering a smooth and insightful journey</p>
         <p className="text-4xl font-bold mb-6">User Case</p>
         <p>Exploring two possible user cases, delving into the unique journey of individuals engaging with the platform, to inform tailored
 design solutions:</p>
+<div className="grid md:grid-cols-2">
         <Image
-          src="/hero_image.png"
-          height={720}
-          width={720}
+            src="/Vritti_Assets/vv.png"
+            height={4096}
+          width={4096}
           alt=""
-          className="col-span-4 w-[40%] p-12"
+          className="col-span-1 w-full md:p-12 mt-6"
         />
+         <Image
+            src="/Vritti_Assets/vv2.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-1 w-full md:p-12 mt-6"
+        />
+
+</div>
       </div>
       <div className="mt-36">
         <p className="text-4xl font-bold mb-6">Concepts and Wireframes</p>
@@ -370,12 +384,12 @@ design solutions:</p>
         </p>
       </div>
       <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[40%] p-12"
-      />
+            src="/Vritti_Assets/vv3.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full mt-12 md:p-12"
+        />
 
       <div className="mt-36">
         <p className="text-4xl font-bold mb-6">Visual Design and Prototype</p>
@@ -385,47 +399,47 @@ design solutions:</p>
           give the website a user-friendly feel.
         </p>
         <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[90%] p-12"
-      />
+            src="/Vritti_Assets/vv4.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full p-12"
+        />
+       <Image
+            src="/Vritti_Assets/vv7.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full p-6"
+        />
+     <Image
+            src="/Vritti_Assets/vv8.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full p-6 -mt-12"
+        />
+     <Image
+            src="/Vritti_Assets/vv9.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full p-6 -mt-12"
+        />
       <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[90%] p-12"
-      />{" "}
+            src="/Vritti_Assets/vv10.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full p-6 -mt-12"
+        />
       <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[90%] p-12"
-      />{" "}
-      <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[90%] p-12"
-      />{" "}
-      <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[90%] p-12"
-      />{" "}
-      <Image
-        src="/hero_image.png"
-        height={720}
-        width={720}
-        alt=""
-        className="col-span-4 w-[90%] p-12"
-      />
+            src="/Vritti_Assets/vv11.png"
+            height={4096}
+          width={4096}
+          alt=""
+          className="col-span-4 w-full p-6 -mt-12"
+        />
       </div>
       
 
@@ -444,7 +458,7 @@ cross-verification with language experts are essential before full implementatio
       </div>
 
 
-      <div className="mt-36">
+      <div className="mt-36 mb-28">
         <p className="text-4xl font-bold mb-6">Challenges and Next Step</p>
         <p className="mb-6">Addressing the unique needs of a diverse user base, including those less technologically adept, posed a challenge in striking the 
 right balance between simplicity and functionality. Ensuring the app's cultural sensitivity and relevance for users in non-urban 
@@ -454,12 +468,12 @@ strategic problem-solving and commitment</p>
 <p className="mb-6">Navigating these challenges contributed to the growth and refinement of the project, fostering a more robust and user-centric 
 solution. The next steps are as follows:</p>
 <div className="grid grid-cols-2">
-    <div className="col-span-1">
+    <div className="col-span-1 p-4">
         <strong className="mb-2">1. Incorporate features on feedback</strong>
         <p>Features like language options, integration to phone 
 services like calls, SMS and WhatsApp</p>
     </div>
-    <div className="col-span-1">
+    <div className="col-span-1 p-4">
         <strong className="mb-2">2. Extensive user testing </strong>
         <p>Extensive user testing will be conducted and used to iterate 
 on the website</p>
